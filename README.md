@@ -1,0 +1,1 @@
+# Project status [![Build status](https://ci.appveyor.com/api/projects/status/t4ktpbm98xda471g/branch/main?svg=true)](https://ci.appveyor.com/project/FoRJim/transferfromcardtocard/branch/main)
