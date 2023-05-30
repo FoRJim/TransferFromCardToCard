@@ -2,15 +2,14 @@ package ru.netology.page;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.support.FindBy;
 import ru.netology.data.DataHelper;
+
+import static com.codeborne.selenide.Selenide.$;
 
 public class VerificationPage {
 
-    @FindBy (css = "[data-test-id=code] input")
-    private SelenideElement enterCode;
-    @FindBy (css = "[data-test-id=action-verify]")
-    private SelenideElement enterButtonVerify;
+    private SelenideElement enterCode = $("[data-test-id=code] input");
+    private SelenideElement enterButtonVerify = $ ("[data-test-id=action-verify]");
 
     public VerificationPage() {
         enterCode.shouldBe(Condition.visible);
