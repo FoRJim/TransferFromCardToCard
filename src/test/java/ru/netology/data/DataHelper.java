@@ -25,7 +25,7 @@ public class DataHelper {
     }
 
     public static int generateInvalidValidAmount(int balance) {
-        return Math.abs(balance) + new Random().nextInt(1000);
+        return Math.abs(balance) + new Random().nextInt(10000);
     }
 
     public static VerificationCode getVerificationCodeFor(AuthInfo authInfo) {
@@ -34,13 +34,13 @@ public class DataHelper {
 
     @Value
     public static class AuthInfo {
-        private String login;
-        private String password;
+        String login;
+        String password;
     }
 
     @Value
     public static class VerificationCode {
-        private String code;
+        String code;
     }
 
     @Value
