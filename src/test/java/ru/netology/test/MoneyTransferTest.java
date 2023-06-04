@@ -29,15 +29,15 @@ public class MoneyTransferTest {
     void shouldTransferMoneyBetweenOwnCards() {
         var firstCardInfo = getFirstCardInfo();
         var secondCardInfo = getSecondCardInfo();
-        var firstCardBalance = personalAreaPage.getCardBalance(0);
-        var secondCardBalance = personalAreaPage.getCardBalance(1);
+        var firstCardBalance = personalAreaPage.getCardBalance(firstCardInfo);
+        var secondCardBalance = personalAreaPage.getCardBalance(secondCardInfo);
         var amount = generateValidAmount(firstCardBalance);
         var expectedBalanceFirstCard = firstCardBalance - amount;
         var expectedBalanceSecondCard = secondCardBalance + amount;
         var transferPage = personalAreaPage.selectCardToTransfer(secondCardInfo);
         personalAreaPage = transferPage.validMoneyTransfer(String.valueOf(amount), firstCardInfo);
-        var actualBalanceFirstCard = personalAreaPage.getCardBalance(0);
-        var actualBalanceSecondCard = personalAreaPage.getCardBalance(1);
+        var actualBalanceFirstCard = personalAreaPage.getCardBalance(firstCardInfo);
+        var actualBalanceSecondCard = personalAreaPage.getCardBalance(secondCardInfo);
         assertEquals(expectedBalanceFirstCard, actualBalanceFirstCard);
         assertEquals(expectedBalanceSecondCard, actualBalanceSecondCard);
     }
